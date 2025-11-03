@@ -1,0 +1,41 @@
+databaseChangeLog:
+  - changeSet:
+      id: 8
+      author: honaida
+      changes:
+        - createTable:
+            tableName: colis_produit
+            columns:
+              - column:
+                  name: id_colis
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_colis
+                    references: colis(id)
+
+              - column:
+                  name: id_produit
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_produit
+                    references: produit(id)
+
+              - column:
+                  name: quantite
+                  type: INT
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: prix
+                  type: DECIMAL(10,2)
+                  constraints:
+                    nullable: false
+
+              - column:
+                  name: date_ajout
+                  type: TIMESTAMP
+                  defaultValueComputed: CURRENT_TIMESTAMP

@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: 4
+      author: honaida
+      changes:
+        - createTable:
+            tableName: zone
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nom
+                  type: VARCHAR(100)
+              - column:
+                  name: code_postal
+                  type: VARCHAR(20)

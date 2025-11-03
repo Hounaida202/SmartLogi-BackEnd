@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - include:
+      file: "changes/001-create-client-expediteur-table.yaml"
+      relativeToChangelogFile: true
+  - include:
+      file: "changes/002-create-produit-table.yaml"
+      relativeToChangelogFile: true
+  - include:
+      file: "changes/003-create-destinataire-table.yaml"
+      relativeToChangelogFile: true
+  - include:
+      file: "changes/004-create-zone-table.yaml"
+      relativeToChangelogFile: true
+  - include:
+      file: "changes/005-create-livreur-table.yaml"
+      relativeToChangelogFile: true
+  - include:
+      file: "changes/006-create-colis-table.yaml"
+      relativeToChangelogFile: true
+  - include:
+      file: "changes/007-create-historique-livraison-table.yaml"
+      relativeToChangelogFile: true
+  - include:
+      file: "changes/008-create-colis-produit-table.yaml"
+      relativeToChangelogFile: true
