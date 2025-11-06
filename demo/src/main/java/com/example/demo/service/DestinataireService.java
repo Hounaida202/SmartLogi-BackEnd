@@ -12,5 +12,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class DestinataireService {
 
+    @Autowired
+    private DestinataireRepository destinataireRepository;
 
+    @Autowired
+    private DestinataireMapper destinataireMapper;
+
+    public DestinataireDTO saveDestinataire(DestinataireDTO destinataireDTO) {
+        Destinataire destinataire = destinataireMapper.toEntity(destinataireDTO);
+        destinataireRepository.save(destinataire);
+        return destinataireMapper.toDTO(destinataire);
+    }
 }
