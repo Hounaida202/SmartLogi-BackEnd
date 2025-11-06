@@ -1,39 +1,22 @@
-package com.example.demo.entity;
+package com.example.demo.dto;
 
 import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 import java.math.BigDecimal;
 
-@Entity
-@Table(name = "produit")
-public class Produit {
+public class ProduitDTO {
 
 
-    @Id
-    @Column(name = "id", nullable = false)
-    private Long id;
 
-    @Size(max = 100)
-    @NotNull
-    @Column(name = "nom", nullable = false, length = 100)
     private String nom;
 
-    @Size(max = 50)
-    @NotNull
-    @Column(name = "categorie", nullable = false, length = 50)
     private String categorie;
 
-    @NotNull
-    @Column(name = "poids", nullable = false, precision = 10, scale = 2)
     private BigDecimal poids;
 
-    @NotNull
-    @Column(name = "prix", nullable = false, precision = 10, scale = 2)
     private BigDecimal prix;
 
     public BigDecimal getPrix() {
@@ -68,12 +51,5 @@ public class Produit {
         this.nom = nom;
     }
 
-    public Long getId() {
-        return id;
-    }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
 }
-

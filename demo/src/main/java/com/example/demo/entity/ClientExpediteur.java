@@ -1,11 +1,14 @@
 package com.example.demo.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
 @Entity
-@Table(name="client_expediteur")
+@Table(name = "client_expediteur")
 public class ClientExpediteur {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

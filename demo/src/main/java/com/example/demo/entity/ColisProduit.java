@@ -1,15 +1,17 @@
 package com.example.demo.entity;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
-import org.hibernate.annotations.ColumnDefault;
 
 import java.math.BigDecimal;
 import java.time.Instant;
 
 @Entity
-@Table(name="colis_produit")
+@Table(name = "colis_produit")
 public class ColisProduit {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "id_colis", nullable = false)
@@ -28,7 +30,6 @@ public class ColisProduit {
     @Column(name = "prix", nullable = false, precision = 10, scale = 2)
     private BigDecimal prix;
 
-    @ColumnDefault("now()")
     @Column(name = "date_ajout")
     private Instant dateAjout;
 

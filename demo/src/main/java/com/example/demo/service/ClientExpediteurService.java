@@ -9,15 +9,6 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ClientExpediteurService {
-    @Autowired
-    private ClientExpediteurRepository clientExpediteurRepository;
-    @Autowired
-    private ClientExpediteurMapper clientExpediteurMapper;
 
-    public ClientExpediteurDTO saveUser(ClientExpediteurDTO clientExpediteurDTO) {
-        ClientExpediteur clientExpediteur = clientExpediteurMapper.toEntity(clientExpediteurDTO);
-        clientExpediteurRepository.save(clientExpediteur);
-        return clientExpediteurMapper.toDTO(clientExpediteur);
-    }
 
 }

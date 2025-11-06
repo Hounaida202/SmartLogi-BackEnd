@@ -1,14 +1,15 @@
 package com.example.demo.entity;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 
 import java.math.BigDecimal;
 
 @Entity
-@Table(name="colis")
+@Table(name = "colis")
 public class Colis {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 

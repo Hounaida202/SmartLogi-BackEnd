@@ -1,12 +1,13 @@
 package com.example.demo.entity;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 
 @Entity
-@Table(name="livreur")
+@Table(name = "livreur")
 public class Livreur {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
 

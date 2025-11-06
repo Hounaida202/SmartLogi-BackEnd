@@ -12,9 +12,16 @@ public interface LivreurMapper {
 
     LivreurMapper INSTANCE = Mappers.getMapper(LivreurMapper.class);
 
-
+    // On ignore la zone dans le sens DTO → Entity
+    @Mapping(target = "zoneAssignee", ignore = true)
     Livreur toEntity(LivreurDTO livreurDTO);
 
+    // Ici, on dit comment transformer Zone → String
+    @Mapping(target = "zoneAssignee", source = "zoneAssignee")
     LivreurDTO toDTO(Livreur livreur);
 
+    // Méthode personnalisée : convertit une Zone en son nom
+    default String map(Zone zone) {
+        return zone != null ? zone.getNom() : null;
+    }
 }

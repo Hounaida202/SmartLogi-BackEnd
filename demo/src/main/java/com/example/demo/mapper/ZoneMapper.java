@@ -5,6 +5,7 @@ import com.example.demo.dto.ZoneDTO;
 import com.example.demo.entity.Destinataire;
 import com.example.demo.entity.Zone;
 import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 
@@ -18,6 +19,7 @@ public interface ZoneMapper {
     ZoneDTO toDTO(Zone zone);
 
     //    ~~~~convertir le dto en entité :)
+    @Mapping(target = "id", ignore = true)
     Zone toEntity(ZoneDTO zoneDTO);
 
 }

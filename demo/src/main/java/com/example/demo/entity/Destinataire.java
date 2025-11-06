@@ -1,10 +1,12 @@
 package com.example.demo.entity;
+
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 
 @Entity
-@Table(name="destinataire")
+@Table(name = "destinataire")
 public class Destinataire {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)

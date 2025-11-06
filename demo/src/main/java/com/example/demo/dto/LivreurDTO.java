@@ -9,10 +9,11 @@ public class LivreurDTO {
 
     public LivreurDTO(){}
 
+//    getters
+
     public String getNom(){
         return nom;
     }
-
     public String getPrenom(){
         return prenom;
     }
@@ -27,12 +28,14 @@ public class LivreurDTO {
     }
 
 
+    //    setters
     public void setNom(String nom){
         this.nom=nom;
     }
     public void setPrenom(String prenom){
         this.prenom=prenom;
     }
+    //    setters
     public void setTelephone(String telephone){
         this.telephone=telephone;
     }

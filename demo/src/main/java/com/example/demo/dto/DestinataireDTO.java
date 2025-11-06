@@ -9,6 +9,7 @@ public class DestinataireDTO {
     private String adresse;
 
 
+    // Getter et Setter pour nom
     public String getNom() {
         return nom;
     }
@@ -17,6 +18,7 @@ public class DestinataireDTO {
         this.nom = nom;
     }
 
+    // Getter et Setter pour prenom
     public String getPrenom() {
         return prenom;
     }
@@ -25,6 +27,7 @@ public class DestinataireDTO {
         this.prenom = prenom;
     }
 
+    // Getter et Setter pour email
     public String getEmail() {
         return email;
     }
@@ -33,6 +36,7 @@ public class DestinataireDTO {
         this.email = email;
     }
 
+    // Getter et Setter pour telephone
     public String getTelephone() {
         return telephone;
     }
@@ -41,6 +45,7 @@ public class DestinataireDTO {
         this.telephone = telephone;
     }
 
+    // Getter et Setter pour adresse
     public String getAdresse() {
         return adresse;
     }

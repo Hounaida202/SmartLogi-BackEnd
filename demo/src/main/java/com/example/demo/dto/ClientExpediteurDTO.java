@@ -9,6 +9,7 @@ public class ClientExpediteurDTO {
 
     public ClientExpediteurDTO(){}
 
+//    getters
 
     public String getNom(){
         return nom;
@@ -26,6 +27,9 @@ public class ClientExpediteurDTO {
         return adresse;
     }
 
+
+
+    //    setters
     public void setNom(String nom){
         this.nom=nom;
     }
