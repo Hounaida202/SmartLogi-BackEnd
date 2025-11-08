@@ -13,16 +13,14 @@ import org.mapstruct.factory.Mappers;
 public interface ColisMapper {
     ColisMapper INSTANCE = Mappers.getMapper(ColisMapper.class);
 
-    // Entity -> DTO
     @Mapping(source = "idLivreur.id", target = "idLivreur")
     @Mapping(source = "idClientExpediteur.id", target = "idClientExpediteur")
     @Mapping(source = "idDestinataire.id", target = "idDestinataire")
     @Mapping(source = "idZone.id", target = "idZone")
-    @Mapping(source = "idZone.nom", target = "nomZone")  // <-- ça fait la copie
+    @Mapping(source = "idZone.nom", target = "nomZone")
 
     ColisDTO toDTO(Colis colis);
 
-    // DTO -> Entity
     @Mapping(source = "idLivreur", target = "idLivreur", qualifiedByName = "longToLivreur")
     @Mapping(source = "idClientExpediteur", target = "idClientExpediteur", qualifiedByName = "longToClient")
     @Mapping(source = "idDestinataire", target = "idDestinataire", qualifiedByName = "longToDestinataire")
@@ -31,7 +29,6 @@ public interface ColisMapper {
 
     Colis toEntity(ColisDTO colisDTO);
 
-    // conversions personnalisées
     @Named("longToLivreur")
     default Livreur longToLivreur(Long id) {
         if (id == null) return null;

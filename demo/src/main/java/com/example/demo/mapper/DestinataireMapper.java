@@ -12,10 +12,8 @@ public interface DestinataireMapper {
     DestinataireMapper INSTANCE = Mappers.getMapper(DestinataireMapper.class);
 
 
-    //    ~~convertir le entite en dto :)
     DestinataireDTO toDTO(Destinataire destinataire);
 
-    //    ~~~~convertir le dto en entité :)
     Destinataire toEntity(DestinataireDTO destinataireDTO);
 
 }

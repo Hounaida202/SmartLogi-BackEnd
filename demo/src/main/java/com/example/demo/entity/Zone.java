@@ -3,6 +3,8 @@ package com.example.demo.entity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 
+import java.util.List;
+
 @Entity
 @Table(name = "zone")
 public class Zone {
@@ -18,6 +20,11 @@ public class Zone {
     @Size(max = 20)
     @Column(name = "code_postal", length = 20)
     private String codePostal;
+
+  /*  @OneToMany(mappedBy="zone")
+    private List<Colis> colis;*/
+
+
 
     public String getCodePostal() {
         return codePostal;
@@ -42,4 +49,14 @@ public class Zone {
     public void setId(Long id) {
         this.id = id;
     }
+
+    /*public List<Colis> getColis() {
+        return colis;
+    }
+
+    public void setColis(List<Colis> colis) {
+        this.colis = colis;
+    }*/
+
+
 }

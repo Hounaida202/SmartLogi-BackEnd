@@ -15,11 +15,11 @@ public interface ZoneMapper {
     ZoneMapper INSTANCE = Mappers.getMapper(ZoneMapper.class);
 
 
-    //    ~~convertir le entite en dto :)
     ZoneDTO toDTO(Zone zone);
 
-    //    ~~~~convertir le dto en entité :)
+/*
     @Mapping(target = "id", ignore = true)
+*/
     Zone toEntity(ZoneDTO zoneDTO);
 
 }

@@ -4,10 +4,9 @@ import com.example.demo.dto.ClientExpediteurDTO;
 import com.example.demo.service.ClientExpediteurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/clientExpediteurs")
@@ -25,6 +24,11 @@ public class ClientExpediteurController {
         return ResponseEntity.ok(savedUser);
     }
 
+
+    @GetMapping("/search")
+    public List<ClientExpediteurDTO> chercherClientsParNom(@RequestParam String nom) {
+        return clientExpediteurService.getClientsParNom(nom);
+    }
 
 
 
