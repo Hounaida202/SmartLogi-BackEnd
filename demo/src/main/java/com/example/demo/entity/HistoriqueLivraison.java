@@ -18,7 +18,7 @@ public class HistoriqueLivraison {
     private Colis colis;
 
     @Size(max = 50)
-    private String statut; // ex: créé, collecté, en transit, livré
+    private String statut;
 
     private LocalDateTime dateChangement;
 

@@ -31,11 +31,9 @@ public class Colis {
     private String statut;
 
     @NotBlank(message = "La priorité est obligatoire")
-    @Pattern(regexp = "P1|P2|P3", message = "La priorité doit être P1, P2 ou P3")
     @Column(name = "priorite", length = 20)
     private String priorite;
 
-    @NotNull(message = "Le livreur est obligatoire")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_livreur")
     private Livreur idLivreur;

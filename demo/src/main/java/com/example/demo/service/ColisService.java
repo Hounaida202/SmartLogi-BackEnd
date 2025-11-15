@@ -133,7 +133,7 @@ public class ColisService {
 
 
 
-    public ColisDTO updateStautColis(Long id, UpdateStautColisDTO dto) {
+    public UpdateStautColisDTO updateStautColis(Long id, UpdateStautColisDTO dto) {
         logger.info("Mise à jour du statut du colis ID={}, nouveau statut={}", id, dto.getStatut());
 
         Colis colis = colisRepository.findById(id)
@@ -142,11 +142,12 @@ public class ColisService {
                     return new RuntimeException("id non trouvé " + id);
                 });
 
-        colisMapper.updateStatutFromDTO(dto, colis);
-        colisRepository.save(colis);
+        if (dto.getStatut() != null) {
+            colis.setStatut(dto.getStatut());
+        }        colisRepository.save(colis);
 
         logger.info("Statut du colis mis à jour avec succès ID={}", colis.getId());
-        return colisMapper.toDTO(colis);
+        return dto;
     }
 
 

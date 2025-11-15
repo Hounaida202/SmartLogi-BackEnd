@@ -2,7 +2,7 @@ package com.example.demo.dto;
 
 public class UpdateStautColisDTO {
     private String statut;
-
+    public UpdateStautColisDTO() {}
     public String getStatut(){
         return statut;
     }
