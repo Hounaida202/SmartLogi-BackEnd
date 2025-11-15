@@ -72,7 +72,7 @@ public class ColisController {
     public ResponseEntity<?> updateStatut(@PathVariable ("idColis") Long idColis,
                                           @RequestBody UpdateStautColisDTO colisDTO){
 
-        ColisDTO colisDto= colisService.updateStautColis(idColis,colisDTO);
+        UpdateStautColisDTO colisDto= colisService.updateStautColis(idColis,colisDTO);
 
 
         return ResponseEntity.ok("updated with success");

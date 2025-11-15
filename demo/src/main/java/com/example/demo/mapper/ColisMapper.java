@@ -63,7 +63,10 @@ public interface ColisMapper {
 
 
 
-    void updateStatutFromDTO(UpdateStautColisDTO dto , @MappingTarget Colis entity);
-
+    default void updateStatutFromDTO(UpdateStautColisDTO dto, @MappingTarget Colis entity) {
+        if(dto.getStatut() != null && !dto.getStatut().isEmpty()) {
+            entity.setStatut(dto.getStatut());
+        }
+    }
 
 }
