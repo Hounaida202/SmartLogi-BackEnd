@@ -71,6 +71,6 @@ Smart Delivery Management System (SDMS) est une application web développée pou
 - **Gestion de projet** : Maven, Git/GitHub, suivi Jira
 
 ## la diagramme des classes
-![img.png](img.png)
+![img_1.png](img_1.png)
 
 
