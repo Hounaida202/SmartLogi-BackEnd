@@ -17,9 +17,8 @@ public class ProduitService {
     private ProduitMapper produitMapper;
 
     public ProduitDTO creerProduit(ProduitDTO dto) {
-
         Produit produit = produitMapper.toEntity(dto);
-        produit.setId(System.currentTimeMillis());
+//        produit.setId(System.currentTimeMillis());
         Produit saved = produitRepository.save(produit);
 
         return produitMapper.toDTO(saved);
