@@ -78,9 +78,12 @@ public class ColisService {
 
     public ColisDTO saveColis(ColisDTO colisDTO) {
         logger.info("Enregistrement du colis: {}", colisDTO);
+
         Colis colis = colisMapper.toEntity(colisDTO);
         colisRepository.save(colis);
+
         logger.info("Colis enregistré ID={}", colis.getId());
+
         return colisMapper.toDTO(colis);
     }
 
