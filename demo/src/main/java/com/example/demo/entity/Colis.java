@@ -30,12 +30,12 @@ public class Colis {
     @Column(name = "statut", length = 50)
     private String statut;
 
+    // ATTENTION : Cette validation exige P1, P2 ou P3
     @NotBlank(message = "La priorité est obligatoire")
-    @Pattern(regexp = "P1|P2|P3", message = "La priorité doit être P1, P2 ou P3")
+    @Pattern(regexp = "^(P1|P2|P3)$", message = "La priorité doit être P1, P2 ou P3")
     @Column(name = "priorite", length = 20)
     private String priorite;
 
-    @NotNull(message = "Le livreur est obligatoire")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_livreur")
     private Livreur idLivreur;
@@ -60,7 +60,7 @@ public class Colis {
     @Column(name = "ville_destination", length = 100)
     private String villeDestination;
 
-
+    // Getters et Setters
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
 
@@ -80,14 +80,20 @@ public class Colis {
     public void setIdLivreur(Livreur idLivreur) { this.idLivreur = idLivreur; }
 
     public ClientExpediteur getIdClientExpediteur() { return idClientExpediteur; }
-    public void setIdClientExpediteur(ClientExpediteur idClientExpediteur) { this.idClientExpediteur = idClientExpediteur; }
+    public void setIdClientExpediteur(ClientExpediteur idClientExpediteur) {
+        this.idClientExpediteur = idClientExpediteur;
+    }
 
     public Destinataire getIdDestinataire() { return idDestinataire; }
-    public void setIdDestinataire(Destinataire idDestinataire) { this.idDestinataire = idDestinataire; }
+    public void setIdDestinataire(Destinataire idDestinataire) {
+        this.idDestinataire = idDestinataire;
+    }
 
     public Zone getIdZone() { return idZone; }
     public void setIdZone(Zone idZone) { this.idZone = idZone; }
 
     public String getVilleDestination() { return villeDestination; }
-    public void setVilleDestination(String villeDestination) { this.villeDestination = villeDestination; }
+    public void setVilleDestination(String villeDestination) {
+        this.villeDestination = villeDestination;
+    }
 }

@@ -5,6 +5,8 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
+import java.util.List;
+
 @Entity
 @Table(name = "client_expediteur")
 public class ClientExpediteur {
@@ -34,6 +36,9 @@ public class ClientExpediteur {
     @Size(max = 255)
     @Column(name = "adresse")
     private String adresse;
+
+    @OneToMany(mappedBy = "idClientExpediteur", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Colis> colisList;
 
     public String getAdresse() {
         return adresse;
